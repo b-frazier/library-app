@@ -1,3 +1,12 @@
-<div class='container'>
-  {{{errorMessage}}}
-</div>
+{{#if errorMessage}}
+  <div class='container text-center'>
+    <div class='alert alert-danger d-flex justify-content-between' role='alert'>
+      {{{errorMessage}}}
+      <button
+        type='button'
+        class='alert-dismissible btn-close'
+        data-bs-dismiss='alert'
+      ></button>
+    </div>
+  </div>
+{{/if}}
