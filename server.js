@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const routes = require('./routes');
 const helpers = require('./utils/helpers');
@@ -15,6 +16,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + 'public'));
+app.use(bodyParser.urlencoded({ limit: '10mb', extended: false }));
 
 mongoose.set('strictQuery', true);
 mongoose.connect(process.env.MONGODB_URL);
