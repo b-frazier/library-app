@@ -1,8 +1,14 @@
-<div class='container'>
+<div class='container d-flex flex-column my-3'>
   <h2>new author</h2>
-  <form action='/api/authors' method='POST'>
-    {{> formFields}}
-    <a href='/api/authors'>cancel</a>
-    <button type='submit'>create</button>
-  </form>
+  <div class='d-flex row'>
+    <form action='/api/authors' method='POST'>
+      {{> formFields}}
+      <div class='my-3'>
+        <button class='btn btn-light'>
+          <a class='text-decoration-none' href='/api/authors'>cancel</a>
+        </button>
+        <button class='btn btn-success' type='submit'>create</button>
+      </div>
+    </form>
+  </div>
 </div>
