@@ -3,9 +3,17 @@
 </div>
 <div class='container'>
   <form action='/api/authors' method='GET'>
-    {{> formFields}}
+    <div>
+      <input
+        class='form-control'
+        type='text'
+        name='name'
+        placeholder='author name'
+        value='{{searchOptions.name}}'
+      />
+    </div>
     <div class='my-3'>
-    <button class='btn btn-success' type='submit'>search</button>
+      <button class='btn btn-success' type='submit'>search</button>
     </div>
   </form>
   <br />
