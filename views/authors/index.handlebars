@@ -1,1 +1,17 @@
-All Authors
+<div class='container my-3'>
+  <h2>search authors</h2>
+</div>
+<div class='container'>
+  <form action='/api/authors' method='GET'>
+    {{> formFields}}
+    <div class='my-3'>
+    <button class='btn btn-success' type='submit'>search</button>
+    </div>
+  </form>
+  <br />
+  <ul class='list-unstyled'>
+    {{#each authors}}
+      <li>{{name}}</li>
+    {{/each}}
+  </ul>
+</div>
