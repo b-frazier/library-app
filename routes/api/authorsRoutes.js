@@ -2,8 +2,13 @@ const router = require('express').Router();
 const Author = require('../../models/author');
 
 // gets all authors
-router.get('/', (req, res) => {
-  res.render('authors/index');
+router.get('/', async (req, res) => {
+  try {
+    const authors = await Author.find({}).lean();
+    res.render('authors/index', { authors: authors });
+  } catch {
+    res.redirect('/');
+  }
 });
 
 // new author
@@ -20,8 +25,8 @@ router.post('/', async (req, res) => {
   });
   try {
     const newAuthor = await author.save();
-    res.redirect(`authors/${newAuthor.id}`);
-    //     res.redirect('authors');
+    // res.redirect(`authors/${newAuthor.id}`);
+    res.redirect('authors');
   } catch {
     res.render('authors/new', {
       author: author,
