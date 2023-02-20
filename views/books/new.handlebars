@@ -1,0 +1,14 @@
+<div class='container d-flex flex-column my-3'>
+  <h2>new book</h2>
+  <div class='d-flex row'>
+    <form action='/api/books' method='POST'>
+      {{> formFields}}
+      <div class='my-3'>
+        <button class='btn btn-light'>
+          <a class='text-decoration-none' href='/api/books'>cancel</a>
+        </button>
+        <button class='btn btn-success' type='submit'>create</button>
+      </div>
+    </form>
+  </div>
+</div>
