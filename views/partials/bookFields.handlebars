@@ -1,0 +1,26 @@
+<div>
+  <input
+    class='form-control'
+    type='text'
+    name='title'
+    value='{{book.title}}'
+    placeholder='title'
+  />
+</div>
+<div>
+  <select name='author'>
+    {{#each authors}}
+      <option label='{{name}}' value='{{id}}'>{{name}}</option>
+    {{/each}}
+  </select>
+</div>
+{{!-- <div>
+  <select name='author'>
+    {{#each authors}}
+      {{#when id 'eq' book.author}}
+        <option selected label='{{name}}' value='{{id}}'>{{name}}</option>
+      {{/when}}
+      <option label='{{name}}' value='{{id}}'></option>
+    {{/each}}
+  </select>
+</div> --}}
